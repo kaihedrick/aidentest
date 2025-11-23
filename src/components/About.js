@@ -11,7 +11,7 @@ const About = () => {
       <div className="about-content">
         <div className="about-text">
           <p className="about-intro">
-            I'm  Aiden, a passionate web developer with a love for creating
+            I'm freaking Aiden, a passionate web developer with a love for creating
             digital experiences that make a difference. I combine technical
             expertise with creative thinking to build solutions that are both
             functional and beautiful.
