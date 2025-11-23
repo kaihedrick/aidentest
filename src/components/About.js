@@ -2,8 +2,34 @@ import React from 'react';
 import './About.css';
 
 const About = () => {
+  // Generate bubbles with different colors and sizes
+  const bubbles = [
+    { id: 1, size: 60, color: '#667eea', delay: 0 },
+    { id: 2, size: 80, color: '#764ba2', delay: 0.5 },
+    { id: 3, size: 50, color: '#f093fb', delay: 1 },
+    { id: 4, size: 70, color: '#4facfe', delay: 1.5 },
+    { id: 5, size: 55, color: '#43e97b', delay: 2 },
+    { id: 6, size: 65, color: '#fa709a', delay: 2.5 },
+    { id: 7, size: 45, color: '#fee140', delay: 3 },
+    { id: 8, size: 75, color: '#30cfd0', delay: 3.5 },
+  ];
+
   return (
     <section id="about" className="about">
+      <div className="bubbles-container">
+        {bubbles.map((bubble) => (
+          <div
+            key={bubble.id}
+            className="bubble"
+            style={{
+              width: `${bubble.size}px`,
+              height: `${bubble.size}px`,
+              backgroundColor: bubble.color,
+              animationDelay: `${bubble.delay}s`,
+            }}
+          />
+        ))}
+      </div>
       <div className="section-header">
         <h2 className="section-title">About Me</h2>
         <div className="section-divider"></div>

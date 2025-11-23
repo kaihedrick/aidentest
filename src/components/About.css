@@ -1,5 +1,7 @@
 .about {
   padding: 100px 20px;
+  position: relative;
+  overflow: hidden;
 }
 
 .section-header {
@@ -90,6 +92,100 @@
   }
 }
 
+.bubbles-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 300px;
+  height: 300px;
+  pointer-events: none;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.bubble {
+  position: absolute;
+  border-radius: 50%;
+  opacity: 0.6;
+  animation: float 6s ease-in-out infinite, fadeInOut 8s ease-in-out infinite;
+  filter: blur(1px);
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.bubble:nth-child(1) {
+  top: 20px;
+  left: 30px;
+}
+
+.bubble:nth-child(2) {
+  top: 60px;
+  left: 10px;
+}
+
+.bubble:nth-child(3) {
+  top: 100px;
+  left: 50px;
+}
+
+.bubble:nth-child(4) {
+  top: 40px;
+  left: 80px;
+}
+
+.bubble:nth-child(5) {
+  top: 140px;
+  left: 20px;
+}
+
+.bubble:nth-child(6) {
+  top: 180px;
+  left: 60px;
+}
+
+.bubble:nth-child(7) {
+  top: 220px;
+  left: 5px;
+}
+
+.bubble:nth-child(8) {
+  top: 80px;
+  left: 120px;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  25% {
+    transform: translate(10px, -15px) scale(1.1);
+  }
+  50% {
+    transform: translate(-5px, 10px) scale(0.9);
+  }
+  75% {
+    transform: translate(15px, 5px) scale(1.05);
+  }
+}
+
+@keyframes fadeInOut {
+  0%, 100% {
+    opacity: 0.4;
+  }
+  50% {
+    opacity: 0.8;
+  }
+}
+
+.section-header {
+  position: relative;
+  z-index: 1;
+}
+
+.about-content {
+  position: relative;
+  z-index: 1;
+}
+
 @media (max-width: 768px) {
   .section-title {
     font-size: 2rem;
@@ -97,6 +193,15 @@
 
   .about-text {
     font-size: 1rem;
+  }
+
+  .bubbles-container {
+    width: 200px;
+    height: 200px;
+  }
+
+  .bubble {
+    opacity: 0.4;
   }
 }
 
